@@ -1,3 +1,4 @@
+import MovieList from "components/MovieList";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -18,21 +19,11 @@ const Home = () => {
     });
 
   }, [])
-  
+
   return (
     <div className="tranding_box">
       <h3 className="tranding_title">Tranding today</h3>
-      <ul>
-        {popularMovies.map((movie, id) => {
-          return (
-            <li key={id}>
-              <Link to={`/movies/${movie.id}`} state ={{from: location.pathname}}>
-                {movie.title}
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
+      <MovieList movies={popularMovies} location={location.pathname} />
     </div>
   );
 };

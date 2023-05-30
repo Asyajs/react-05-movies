@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { getMovieByQuery } from "routes/api";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
+import MovieList from "components/MovieList";
 
  const MovieSearch = () => {
   const [movies, setMovies] = useState([]);
@@ -44,17 +45,7 @@ import { useEffect } from "react";
           Search
         </button>
       </form>
-      <ul>
-        {movies?.map((movie, id) => {
-          return (
-            <li key={id}>
-              <Link to={`/movies/${movie.id}`} state ={{from: location}}>
-                {movie.title}
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
+      <MovieList movies={movies} location={location.pathname} />
     </>
   );
 };

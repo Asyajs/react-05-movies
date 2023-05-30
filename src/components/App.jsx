@@ -9,9 +9,9 @@ import { Routes, Route } from "react-router-dom";
 
 const Cast = lazy(() => import("./Cast"));
 const Header = lazy(() => import("./Header"));
-const Home = lazy(() => import("./Home"));
+const Home = lazy(() => import("../pages/Home"));
 const MovieDetails = lazy(() => import("./MovieDetails"));
-const MovieSearch = lazy(() => import("./MovieSearch"));
+const MovieSearch = lazy(() => import("../pages/MovieSearch"));
 const Review = lazy(() => import("./Review"));
 
 
