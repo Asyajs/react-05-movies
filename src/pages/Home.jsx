@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div className="tranding_box">
       <h3 className="tranding_title">Tranding today</h3>
-      <MovieList movies={popularMovies} location={location.pathname} />
+      <MovieList movies={popularMovies} redirectPathName={location.pathname} />
     </div>
   );
 };

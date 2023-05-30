@@ -45,7 +45,7 @@ import MovieList from "components/MovieList";
           Search
         </button>
       </form>
-      <MovieList movies={movies} location={location.pathname} />
+      <MovieList movies={movies} redirectPathName={location} />
     </>
   );
 };

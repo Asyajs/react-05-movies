@@ -1,19 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import css from "./AppBar.module.css";
 
 const navItem = [
   { href: '/', text: 'Home' },
   { href: '/movies', text: 'Movies' }
 ]
 
+const activeClassName = {
+  color: 'red',
+};
+
 export const AppBar = () => {
   return (
-    <div>
+    <div className={css.navItem}>
       {navItem.map(({ href, text }) => (
-        <Link to={href} key={href}
-          className='nav_item'>
+        <NavLink
+          to={href} key={href}
+          className={css.navLink}
+          style={({ isActive }) => (isActive ? activeClassName : undefined)}
+      >
           {text}
-        </Link>))}
+        </NavLink>))}
     </div>
   );
 }
